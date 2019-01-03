@@ -1,14 +1,25 @@
 //easyJS
-//HomeWork 1
+//HomeWork 2
 
-var S, V, NUMBER_PI = 3.14;
-var h = +prompt("Введите значение высоты", 'h');
-var r = +prompt("Введите значение радиуса", 'r');
+var value = +prompt("Enter 1 or 0", '');
 
-V = NUMBER_PI * r * r * h;
-S = 2 * NUMBER_PI * r * (r + h);
+switch (value) {
+    case 0: 
+            {
+                document.write("Value is equal 0");
+            };
+            break;
+    case 1:   
+            {
+                document.write("Value is equal 1");  
+            };    
+            break; 
+    default:
+            {
+                document.write("Value is equal neither 0 nor 1");
+            };
+}
 
-document.write("h = " + h + "; " + "r = " + r + "; "
-                         + "&Pi; = " + NUMBER_PI + "<hr>");
-document.write("Area is equal to : " + S + "<hr>"
-                 + "Volume is equal to: " + V + "<hr>" );
+
+
+
