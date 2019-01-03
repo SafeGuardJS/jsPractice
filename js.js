@@ -1,25 +1,20 @@
 //easyJS
 //HomeWork 2
+//Task 1
+var a = +prompt("Enter first value", '');
+var b = +prompt("Enter second value, bigger then first", '');
 
-var value = +prompt("Enter 1 or 0", '');
-
-switch (value) {
-    case 0: 
-            {
-                document.write("Value is equal 0");
-            };
-            break;
-    case 1:   
-            {
-                document.write("Value is equal 1");  
-            };    
-            break; 
-    default:
-            {
-                document.write("Value is equal neither 0 nor 1");
-            };
+if (!(a < b)) {
+    document.write("Your value is incorrect");
 }
-
+for (var i = a + 1; i < b; i++) {
+    document.write(i + "&nbsp;");
+}
+for (var i = a + 1; i < b; i++) {
+    if (i % 2 == 1) {
+        document.write("<hr>" +  i);
+    }
+}
 
 
 
