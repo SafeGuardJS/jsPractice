@@ -1,20 +1,36 @@
 //easyJS
 //HomeWork 2
-//Task 1
-var a = +prompt("Enter first value", '');
-var b = +prompt("Enter second value, bigger then first", '');
+//Task 2
 
-if (!(a < b)) {
-    document.write("Your value is incorrect");
+var star = "*", nbsp = "&nbsp";
+
+for (var i = 0; i < 5; i++) {
+    if ( i == 0 || i == 4){
+        for ( var j = 0; j < 20; j++) {
+            document.write(star);
+        }
+    }else{
+        for ( var j = 0; j < 20; j++) {
+            if ( j == 0 || j == 19){
+                document.write(star);
+            }else {
+                document.write(nbsp + nbsp);
+            }
+        }
+    }    
+    document.write("<br/>");
 }
-for (var i = a + 1; i < b; i++) {
-    document.write(i + "&nbsp;");
+
+document.write("<hr>");
+for (var i = 0; i < 10; i++) {
+    for ( var j = 0; j < i; j++) {
+        document.write(star);
+    }    
+    document.write("<br/>");
 }
-for (var i = a + 1; i < b; i++) {
-    if (i % 2 == 1) {
-        document.write("<hr>" +  i);
-    }
-}
+
+document.write("<hr>");
+
 
 
 
