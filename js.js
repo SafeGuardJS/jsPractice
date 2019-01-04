@@ -1,27 +1,28 @@
 //easyJS
-//HomeWork 2
+//HomeWork 3
 //Task 2
 
-var arr = new Array()
-var N = +prompt("Enter size of array", '');
+var col, row, Arr = new Array();
 
-arr.length = N;
-for (var i = 0; i < N; i++) {
-    arr[i] = Math.ceil(Math.random(100) * 100);
+col = +prompt("Enter a number of colmns :", '');
+row = +prompt("Enter a number of rows :", '');
+
+for ( var i = 0; i < row; i++ ) {
+    Arr[i] = new Array(col);
 }
-
-var Max = arr[0], Min = arr[0], Sum = 0, Middle = 0, arrEvenNumber = [];
-
-for (var i = 0; i < N; i++) {
-    if (Max < arr[i]) Max = arr[i];
-    if (Min > arr[i]) Min = arr[i];
-    if (arr[i] % 2 == 0) arrEvenNumber.push(arr[i]);
-    Sum += arr[i];
+for ( var i = 0; i < row; i++ ) {
+    for (var j = 0; j < col; j++ ) {
+        Arr[i][j] = Math.ceil(Math.random() * 9);
+        document.write(Arr[i][j] + "&nbsp;");
+    }
+    document.write("<br/>");
 }
-Middle = Sum / N;
-
-document.write("<h1>" + "Initial Array<br/>" + "</h1>" + arr.join(" | ") + "<hr>");
-document.write("Minimal value :" + Min + "<br/>Maximum value :" + Max + "<hr>");
-document.write("Middel value of array :"+ Middle + "<hr>");
-document.write("Sum of array elements :"+ Sum + "<hr>");
-document.write("Whole even value :" + arrEvenNumber.join(" | ") + "<hr>");
+document.write("<hr>");
+for (var i = 0; i < col; i++) {
+         Arr[i][i] = 0;
+         for( var j = row - 1; j >= 0; j--) {
+             Arr[j][j] = 0;
+             document.write(Arr[i][j] + "&nbsp;");
+         }
+         document.write("<br/>");
+}
