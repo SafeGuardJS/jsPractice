@@ -1,28 +1,18 @@
 //easyJS
-//HomeWork 3
-//Task 2
+//HomeWork 5
+//Task 1
+//Function(Basic)
 
-var col, row, Arr = new Array();
 
-col = +prompt("Enter a number of colmns :", '');
-row = +prompt("Enter a number of rows :", '');
+Show(middleValue, 3, 3, 3);
 
-for ( var i = 0; i < row; i++ ) {
-    Arr[i] = new Array(col);
+
+//============================
+function middleValue(firstValue, secondValue, thirdValue) {
+    return (firstValue + secondValue + thirdValue) / arguments.length;
 }
-for ( var i = 0; i < row; i++ ) {
-    for (var j = 0; j < col; j++ ) {
-        Arr[i][j] = Math.ceil(Math.random() * 9);
-        document.write(Arr[i][j] + "&nbsp;");
-    }
-    document.write("<br/>");
+
+function Show(callBackFunction, firstValue, secondValue, thirdValue) {
+  alert(callBackFunction(firstValue, secondValue, thirdValue));
 }
-document.write("<hr>");
-for (var i = 0; i < col; i++) {
-         Arr[i][i] = 0;
-         for( var j = row - 1; j >= 0; j--) {
-             Arr[j][j] = 0;
-             document.write(Arr[i][j] + "&nbsp;");
-         }
-         document.write("<br/>");
-}
+
