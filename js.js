@@ -1,73 +1,29 @@
-//easyJS
-//HomeWork 6
+//advanced_JS
+//HomeWork 7
 //Task 1
-//Object
+//Prototypes
 
-let Matrix = getMatrix(3, 5, 0, 10),
-    vector = getVector(3, 0, 10),
-    resul;
+function Box(height, width, depth, matirial) {
+    this.height = height;
+    this.width = width;
+    this.depth = depth;
+    this.matirial = matirial;
 
-printMatrix(Matrix, 3, 5);
-document.write("<hr>" + vector.join(" ")); 
-resulst = calculateMul(Matrix, vector, 3, 5);
-document.write("<hr>" + resulst.join(" "));
-
-
-
-
-
-//=========================================
-
-function getMatrix(row, col, min, max) {
-    var Matrix = new Array(row);
-
-    for(let i = 0; i < row; i++) {
-        Matrix[i] = new Array(col);
-    }
-
-    for(let i = 0; i < row; i++) {
-        for(let j = 0; j < col; j++) {
-            Matrix[i][j] = getRandom(min, max);
-        }
-    }
-
-    return Matrix;
-} 
-
-function printMatrix(Matrix, row, col) {
-    for(let i = 0; i < row; i++) {
-        for(let j = 0; j < col; j++) {
-            document.write(Matrix[i][j] + " ");
-        }
-        document.write("<br />");
+    this.volumeOfBox = function() {
+        var volume =  this.height * this.width * this.depth;
+        
+        return volume;
     }
 }
 
-function getVector(row, min, max) {
-    let vector = new Array(row);
-
-    for(let i = 0; i < row; i++) {
-        vector[i] = getRandom(min, max);
+Box.prototype.equal = function(otherBox) {
+    if(this.volumeOfBox() == otherBox.volumeOfBox()) {
+        return true;
     }
-
-    return vector;
+    return false;
 }
 
-function getRandom(min, max) {
-    return Math.ceil(10 * Math.random()) * (max - min + 1) + min;
-}
+var firstBox = new Box(100, 10, 10, "Paper");
+var secondBox = new Box(10, 10, 100, "Wood");
 
-function calculateMul(Matrix, vector, row, col) {
-    let result = new Array(col);
-    for(let i = 0; i < col; i++) {
-        result[i] = 0;
-    }
-
-    for(let i = 0; i < col; i++) {
-        for(let j = 0; j < row; j++) {
-            result[i] += Matrix[j][i] * vector[j];
-        }
-    }
-
-    return result;
-}
+alert(firstBox.equal(secondBox));
