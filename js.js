@@ -17,7 +17,7 @@ function Box(height, width, depth, matirial) {
 }
 
 Box.prototype.equal = function(otherBox) {
-    if(this.volumeOfBox() == otherBox.volumeOfBox()) {
+    if(this.volumeOfBox() == otherBox.volumeOfBox()) {12312321
         return true;
     }
     return false;
